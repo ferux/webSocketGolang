@@ -1,0 +1,141 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+}
+div#root {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+
+}
+
+div.container {
+    margin: .5em auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+    font-size: 28px;
+    justify-content: center;
+    text-align: center;
+}
+
+div.container>form {
+    flex-grow: 1;
+    min-height: 1em;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    /* padding: 0.2em 1em; */
+    padding: 0.5em;
+}
+
+div.container>form>input {
+    border: 1px solid #e4e4e4;
+    font-size: 18px;
+    padding: 0em 1em;
+    border-radius: 8px;
+    transition: box-shadow .5s ease-in-out 0s;
+}
+
+div.container>form>input:hover:not(focus) {
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.15);
+}
+
+div.container>form>input:focus:not(hover) {
+    box-shadow: 0px 0px 5px 1px rgba(0, 136, 255, 0.25);
+}
+
+input.username {
+    flex-grow: 0;
+}
+
+input.message {
+    flex-grow: 80;
+}
+
+button.submit {
+    flex-grow: 10;
+    border: 1px solid #e4e4e4;
+    font-size: 18px;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+
+div.title {
+    min-height: 1em;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+div.messages {
+    flex-grow: 98;
+    min-height: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-size: 18px;
+    border-top: 1px solid #e4e4e4;
+    text-align: start;
+    background-color: aliceblue;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: auto;
+}
+
+div.message {
+    background-color: beige;
+    padding: 0.5em 0.5em;
+    margin: 0.2em 1em;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid burlywood;
+    min-height: min-content;
+}
+
+div.message>div.info {
+    display: inline-flex;
+}
+div.message>div.info>div.author{
+    padding: 3px 3px;
+    font-weight: bold;
+    color: green;
+}
+
+div.message>div.info>div.time{
+    padding: 3px 3px;
+    font-family: monospace;
+    font-size: 14px;
+    color: rgba(0,0,0,0.25);
+    align-self: flex-end;
+}
+
+div.message>div.text {
+    background-color: rgba(0,0,0,0.1);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+@media (max-width:800px) {
+    div.container>form {
+        flex-direction: column;
+    }
+    input.message {
+        flex-grow: 80;
+        height: 3em;
+    }
+    div#root {
+        width: 100%;
+    }
+}
